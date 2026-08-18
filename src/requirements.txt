@@ -1,0 +1,6 @@
+langchain_core
+langchain_ollama
+langchain_openai
+pydantic
+pydantic_settings
+pypdf
