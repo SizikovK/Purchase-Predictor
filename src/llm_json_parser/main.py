@@ -11,11 +11,12 @@ from .parser import DocumentParsingPipeline
 logging.basicConfig(level=INFO)
 
 def analyze_document(path: Path) -> None:
-    income, expenses = calculate_result(path)
+    income, expenses, transaction_count = calculate_result(path)
     logging.info(
-        "Итого: Пополнения: %s ₽, Расходы: %s ₽",
+        "Итого: Пополнения: %s ₽, Расходы: %s ₽. Всего транзакций: %d",
         income,
         expenses,
+        transaction_count
     )
 
 async def run(input_path: Path, output_path: Path) -> None:
@@ -59,8 +60,8 @@ def main() -> None:
 
     if not args.analyze:
         asyncio.run(run(args.input, args.output))
-    else:
-        analyze_document(args.input)
+
+    analyze_document(args.input)
 
 if __name__ == "__main__":
     main()
