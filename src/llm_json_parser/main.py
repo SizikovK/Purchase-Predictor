@@ -6,7 +6,7 @@ from pathlib import Path
 
 from ..core.config import get_settings
 from .calculate_result import calculate_result
-from .pipeline import DocumentParsingPipeline
+from .parser import DocumentParsingPipeline
 
 logging.basicConfig(level=INFO)
 
